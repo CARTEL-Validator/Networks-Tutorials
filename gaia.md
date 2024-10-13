@@ -9,7 +9,7 @@ Gaia включает в себя функциональность, необхо
 ## Основной сайт
 [hub.cosmos.network](https://hub.cosmos.network/main)
 
-## Тестовая установка
+## Тестовая сборка и установка
 1. Заходим на сайт [https://github.com/finteh/gaia](https://github.com/finteh/gaia) и делаем форк репозитария к себе.
 
 ![github_fork.png](images/gaia/github_fork.png)
@@ -76,8 +76,54 @@ make build
 Если указана нужная версия, то бинарный файл собран успешно
 ![build_ok.png](images/gaia/build_ok.png)
 
+## Настройка GAIA для Genesis-Валидатора (новая сеть)
+### Делаем gentx-файл
+1. Инициализируем ноду
+```Shell
+gaiad init <NAME_of_VALIDATOR> --chain-id <chain_id>
+```
+Пример:
+```Shell
+gaiad init Cartel --chain-id dvs42
+```
+>После этого в домашней директории создаётся папка `.gaia` с конфигурационными файлами
+
+2. Создаём кошелёк
+```Shell
+gaiad keys add <wallet_name>
+```
+> Можно использовать аппаратный кошелёк Ledger
+
+3. Создаём genesis-аккаунт с балансом в минимальных единицах
+```Shell
+gaiad genesis add-genesis-account <wallet_name> 10000000uatom
+```
+
+>Внимание!
+> 
+>Наименование монет может быть sputnik и stake
+> 
+>Зависит от ... 
+ 
+
+Пример:
+```Shell
+./gaiad genesis add-genesis-account wallet 10000000stake
+```
+
+3.
+```Shell
+gaiad genesis gentx <wallet_name> 10000000uatom --chain-id <chain-id>
+```
+Пример:
+```Shell
+./gaiad genesis gentx wallet 10000000stake--chain-id dvs42
+```
 
 
+
+
+## Настройка GAIA для подключения нового валидатора к уже существующей сети
 
 
 
