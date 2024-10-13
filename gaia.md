@@ -13,6 +13,10 @@ Gaia включает в себя функциональность, необхо
 1. Заходим на сайт [https://github.com/finteh/gaia](https://github.com/finteh/gaia) и делаем форк репозитария к себе.
 
 ![github_fork.png](images/gaia/github_fork.png)
+
+> Обязательно снимите флажок _Copy the main branch only_
+![copy_main_branch.png](images/gaia/copy_main_branch.png)
+
 2. Копируем адрес репозитория и клонируем его командой 
 
 ![clone_repo.png](images/gaia/clone_repo-1.png)
@@ -23,7 +27,22 @@ git clone <repo-path>
 ```
 ![clone_repo-2.png](images/gaia/clone_repo-2.png)
 
-3. Проверяем версию GO
+3. Узнаём нужную Binary Version (ветку) по адресу  [https://www.mintscan.io/cosmos/parameters/](https://www.mintscan.io/cosmos/parameters/)
+
+![binary_version.png](images/gaia/binary_version.png)
+ 
+4. Переключаемся на нужную версию командой _git checkout <branch>_
+
+``` Shell
+git checkout v20.0.0
+```
+
+>Список версий можно посмотреть командой: `git branch`
+
+>Загрузить последние обновление с удалённого репозитория можно командой: `git pull `
+
+
+5. Проверяем версию GO
 ``` Shell
 go version
 ```
@@ -39,7 +58,7 @@ go version
 ``` Shell
 export PATH=$PATH:/usr/local/go/bin
 ```
-4. Заходим в репозиторий gaia через консоль
+6. Заходим в репозиторий gaia через консоль
 ``` Shell
 cd  <path>/gaia/
 ```
@@ -47,16 +66,13 @@ cd  <path>/gaia/
 ``` Shell
 make build
 ```
-5. В папке __build__ должен появиться бинарный файл _gaiad_
+В папке __build__ должен появиться бинарный файл _gaiad_
 
-6. Проверяем версию командой 
+7. Проверяем версию командой 
 ``` Shell
 ./gaiad version
 ```
 Если указана нужная версия, то бинарный файл собран успешно
-
-
-
 
 
 
