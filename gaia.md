@@ -74,6 +74,8 @@ make build
 ./gaiad version
 ```
 Если указана нужная версия, то бинарный файл собран успешно
+![build_ok.png](images/gaia/build_ok.png)
+
 
 
 
