@@ -115,7 +115,7 @@ gaiad genesis add-genesis-account <wallet_name> 10000000uatom
 ./gaiad genesis add-genesis-account wallet 10000000stake
 ```
 
-3.
+4.
 ```Shell
 gaiad genesis gentx <wallet_name> 10000000uatom --chain-id <chain-id>
 ```
