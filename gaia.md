@@ -9,6 +9,8 @@ Gaia включает в себя функциональность, необхо
 ## Основной сайт
 [hub.cosmos.network](https://hub.cosmos.network/main)
 
+---
+
 ## Тестовая сборка и установка
 1. Заходим на сайт [https://github.com/finteh/gaia](https://github.com/finteh/gaia) и делаем форк репозитария к себе.
 
@@ -76,6 +78,8 @@ make build
 Если указана нужная версия, то бинарный файл собран успешно
 ![build_ok.png](images/gaia/build_ok.png)
 
+---
+
 ## Настройка GAIA для Genesis-Валидатора (новая сеть)
 ### Делаем gentx-файл
 1. Инициализируем ноду
@@ -121,7 +125,7 @@ gaiad genesis gentx <wallet_name> 10000000uatom --chain-id <chain-id>
 ```
 
 
-
+---
 
 ## Настройка GAIA для подключения нового валидатора к уже существующей сети
 
